@@ -11,18 +11,13 @@ namespace ServiceReservasi
     [ServiceContract]
     public interface IService1
     {
-        [OperationContract]
-        string GetData(int value);
-
-        [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Add your service operations here
 
         [OperationContract]
         string pemesanan(string IDPemesanan, string NamaCustomers, string NoTelepon, int JumlahPemesanan, string IDLokasi);//method//proses input data
         [OperationContract]
-        string editPemesanan(string IDPemesanan, string NamaCustomer);
+        string editPemesanan(string IDPemesanan, string NamaCustomer, string NoTelepon);
         [OperationContract]
         string deletePemesann(string IDPemesanan);
         [OperationContract]
@@ -65,11 +60,11 @@ namespace ServiceReservasi
         [DataMember]
         public string NamaCustomer { get; set; }
         [DataMember]
-        public string NomorTelepon { get; set; }
+        public string NoTelepon { get; set; }
         [DataMember]
         public int JumlahPemesanan { get; set; }
         [DataMember]
-        public string IDLokasi { get; set; }
+        public string Lokasi { get; set; }
     }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
